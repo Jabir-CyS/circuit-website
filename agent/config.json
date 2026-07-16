@@ -5,7 +5,7 @@
     { "name": "Ars Technica", "url": "https://feeds.arstechnica.com/arstechnica/index", "default_category": "security" }
   ],
   "max_new_posts_per_run": 3,
-  "model": "gemini-2.5-pro",
+  "model": "gemini-2.5-flash",
   "category_keywords": {
     "ai": ["ai", "artificial intelligence", "openai", "chatgpt", "llm", "machine learning", "model"],
     "security": ["security", "hack", "breach", "vulnerability", "phishing", "malware", "cyber"],
