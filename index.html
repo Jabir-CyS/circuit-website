@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circuit — Tech News, Straight to the Point</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">Circuit</a>
+    <nav>
+      <ul>
+        <li><a href="category.html?cat=ai">AI</a></li>
+        <li><a href="category.html?cat=startup">Startups</a></li>
+        <li><a href="category.html?cat=security">Security</a></li>
+        <li><a href="category.html?cat=apps">Apps</a></li>
+        <li><a href="category.html?cat=reviews">Reviews</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="#newsletter" class="subscribe-btn">Subscribe</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay"></div>
+<nav class="mobile-nav" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="category.html?cat=ai">AI</a></li>
+    <li><a href="category.html?cat=startup">Startups</a></li>
+    <li><a href="category.html?cat=security">Security</a></li>
+    <li><a href="category.html?cat=apps">Apps</a></li>
+    <li><a href="category.html?cat=reviews">Reviews</a></li>
+  </ul>
+  <a href="#newsletter" class="subscribe-btn">Subscribe</a>
+</nav>
+
+<main>
+  <!-- HERO (rendered from the newest featured post) -->
+  <section class="hero">
+    <div class="wrap hero-grid" id="heroSlot"></div>
+  </section>
+
+  <!-- Article grid (rendered from all remaining posts) -->
+  <section class="section" style="padding-top:32px;">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Latest</h2>
+      </div>
+      <div class="grid" id="gridSlot"></div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="newsletter">
+    <div class="wrap">
+      <div>
+        <h2>Get the day's biggest tech stories in your inbox</h2>
+        <p>One email, every morning. No noise.</p>
+      </div>
+      <div>
+        <form class="signup" id="newsletterForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="email" name="email" placeholder="you@email.com" required id="newsletterEmail">
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="signup-msg" id="signupMsg">✓ Thanks — check your inbox to confirm.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <a href="index.html" class="logo">Circuit</a>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+    </div>
+    <p class="copyright">© 2026 Circuit. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="posts.js"></script>
+<script src="script.js"></script>
+<script>
+  const posts = loadPosts().slice().sort((a,b) => new Date(b.date) - new Date(a.date));
+  const featured = posts.find(p => p.featured) || posts[0];
+  const rest = posts.filter(p => p.slug !== featured.slug);
+
+  // Hero
+  document.getElementById('heroSlot').innerHTML = `
+    <div>
+      <span class="eyebrow mono">Top Story</span>
+      <h1><a href="articles/${featured.slug}.html">${featured.title}</a></h1>
+      <p class="dek">${featured.dek}</p>
+      <p class="byline">By <strong>${featured.author}</strong> · ${featured.readTime} · ${formatDate(featured.date)}</p>
+    </div>
+    <a href="articles/${featured.slug}.html" style="display:block;">
+      ${imageBlockHtml(featured, 'hero-image')}
+    </a>
+  `;
+
+  // Grid
+  const gridSlot = document.getElementById('gridSlot');
+  gridSlot.innerHTML = rest.map(p => `
+    <article class="card">
+      <a href="articles/${p.slug}.html">
+        ${imageBlockHtml(p, 'card-thumb')}
+        <span class="tag ${p.category}">${p.categoryLabel}</span>
+        <h3>${p.title}</h3>
+        <p>${p.dek}</p>
+        <p class="byline">By <strong>${p.author}</strong> · ${p.readTime}</p>
+      </a>
+    </article>
+  `).join('');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Circuit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">Circuit</a>
+    <nav>
+      <ul>
+        <li><a href="category.html?cat=ai">AI</a></li>
+        <li><a href="category.html?cat=startup">Startups</a></li>
+        <li><a href="category.html?cat=security">Security</a></li>
+        <li><a href="category.html?cat=apps">Apps</a></li>
+        <li><a href="category.html?cat=reviews">Reviews</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="index.html#newsletter" class="subscribe-btn">Subscribe</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay"></div>
+<nav class="mobile-nav" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="category.html?cat=ai">AI</a></li>
+    <li><a href="category.html?cat=startup">Startups</a></li>
+    <li><a href="category.html?cat=security">Security</a></li>
+    <li><a href="category.html?cat=apps">Apps</a></li>
+    <li><a href="category.html?cat=reviews">Reviews</a></li>
+  </ul>
+  <a href="index.html#newsletter" class="subscribe-btn">Subscribe</a>
+</nav>
+
+<main id="articleRoot">
+  <!-- filled by JS, or replaced with a not-found message -->
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <a href="index.html" class="logo">Circuit</a>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+    </div>
+    <p class="copyright">© 2026 Circuit. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="posts.js"></script>
+<script src="script.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('slug');
+  const post = slug ? getPostBySlug(slug) : null;
+  const root = document.getElementById('articleRoot');
+
+  if (!post) {
+    root.innerHTML = `
+      <div class="not-found">
+        <h1>Story not found</h1>
+        <p>This article may have been moved or removed.</p>
+        <a href="index.html" class="subscribe-btn">← Back to homepage</a>
+      </div>
+    `;
+  } else {
+    document.getElementById('pageTitle').textContent = post.title + " — Circuit";
+    const metaDesc = document.createElement('meta');
+    metaDesc.name = "description";
+    metaDesc.content = post.metaDescription || post.dek;
+    document.head.appendChild(metaDesc);
+
+    const allPosts = loadPosts();
+    const related = allPosts
+      .filter(p => p.category === post.category && p.slug !== post.slug)
+      .slice(0, 3);
+
+    root.innerHTML = `
+      <section class="article-header">
+        <div class="wrap">
+          <p class="breadcrumb"><a href="index.html">Circuit</a> / <a href="category.html?cat=${post.category}">${post.categoryLabel}</a></p>
+          <span class="tag ${post.category}">${post.categoryLabel}</span>
+          <h1>${post.title}</h1>
+          <p class="article-dek">${post.dek}</p>
+          <div class="article-meta">
+            <span class="avatar">${initials(post.author)}</span>
+            <span><strong style="color:var(--ink-soft); font-weight:600;">${post.author}</strong> · ${formatDate(post.date)} · ${post.readTime}</span>
+          </div>
+        </div>
+        <div class="wrap">
+          ${imageBlockHtml(post, 'article-hero-image')}
+          ${post.image && post.imageCredit && post.imageCredit.name ? `<p class="image-credit">Photo by <a href="${post.imageCredit.url}" target="_blank" rel="noopener">${post.imageCredit.name}</a> / Unsplash</p>` : ''}
+        </div>
+      </section>
+
+      <article class="article-body">
+        ${renderBody(post.body)}
+      </article>
+
+      <div class="article-footer">
+        <p class="byline">Written by <strong>${post.author}</strong></p>
+        ${post.sourceName && post.sourceLink ? `<p class="byline" style="margin-top:6px;">Inspired by reporting from <a href="${post.sourceLink}" target="_blank" rel="noopener" style="color:var(--accent);">${post.sourceName}</a></p>` : ''}
+        <div class="share-row">
+          <a href="#" onclick="navigator.clipboard.writeText(window.location.href); this.textContent='Link copied ✓'; return false;">Copy link</a>
+        </div>
+      </div>
+
+      ${related.length ? `
+      <section class="section">
+        <div class="wrap">
+          <h3 class="related-heading">More in ${post.categoryLabel}</h3>
+          <div class="grid">
+            ${related.map(p => `
+              <article class="card">
+                <a href="article.html?slug=${p.slug}">
+                  ${imageBlockHtml(p, 'card-thumb')}
+                  <span class="tag ${p.category}">${p.categoryLabel}</span>
+                  <h3>${p.title}</h3>
+                  <p>${p.dek}</p>
+                  <p class="byline">By <strong>${p.author}</strong> · ${p.readTime}</p>
+                </a>
+              </article>
+            `).join('')}
+          </div>
+        </div>
+      </section>` : ''}
+    `;
+  }
+</script>
+
+</body>
+</html>

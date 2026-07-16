@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Circuit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">Circuit</a>
+    <nav id="navDesktop">
+      <ul>
+        <li><a href="category.html?cat=ai" data-cat="ai">AI</a></li>
+        <li><a href="category.html?cat=startup" data-cat="startup">Startups</a></li>
+        <li><a href="category.html?cat=security" data-cat="security">Security</a></li>
+        <li><a href="category.html?cat=apps" data-cat="apps">Apps</a></li>
+        <li><a href="category.html?cat=reviews" data-cat="reviews">Reviews</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="index.html#newsletter" class="subscribe-btn">Subscribe</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay"></div>
+<nav class="mobile-nav" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="category.html?cat=ai">AI</a></li>
+    <li><a href="category.html?cat=startup">Startups</a></li>
+    <li><a href="category.html?cat=security">Security</a></li>
+    <li><a href="category.html?cat=apps">Apps</a></li>
+    <li><a href="category.html?cat=reviews">Reviews</a></li>
+  </ul>
+  <a href="index.html#newsletter" class="subscribe-btn">Subscribe</a>
+</nav>
+
+<main>
+  <section class="section" style="padding-top:44px; border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:8px;">
+        <h2 id="catHeading">Category</h2>
+      </div>
+      <p class="byline" id="catCount" style="margin-bottom:0;"></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid" id="gridSlot"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <a href="index.html" class="logo">Circuit</a>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+    </div>
+    <p class="copyright">© 2026 Circuit. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="posts.js"></script>
+<script src="script.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const cat = params.get('cat') || 'ai';
+  const labels = { ai: 'AI', startup: 'Startups', security: 'Security', apps: 'Apps', reviews: 'Reviews' };
+  const label = labels[cat] || cat;
+
+  document.getElementById('pageTitle').textContent = label + " — Circuit";
+  document.getElementById('catHeading').textContent = label;
+
+  document.querySelectorAll('#navDesktop a').forEach(a => {
+    if (a.dataset.cat === cat) a.classList.add('active');
+  });
+
+  const posts = loadPosts()
+    .filter(p => p.category === cat)
+    .sort((a,b) => new Date(b.date) - new Date(a.date));
+
+  document.getElementById('catCount').textContent = posts.length + (posts.length === 1 ? ' story' : ' stories');
+
+  const gridSlot = document.getElementById('gridSlot');
+  if (posts.length === 0) {
+    gridSlot.innerHTML = `<p class="byline">No stories in this category yet.</p>`;
+  } else {
+    gridSlot.innerHTML = posts.map(p => `
+      <article class="card">
+        <a href="articles/${p.slug}.html">
+          ${imageBlockHtml(p, 'card-thumb')}
+          <span class="tag ${p.category}">${p.categoryLabel}</span>
+          <h3>${p.title}</h3>
+          <p>${p.dek}</p>
+          <p class="byline">By <strong>${p.author}</strong> · ${p.readTime}</p>
+        </a>
+      </article>
+    `).join('');
+  }
+</script>
+
+</body>
+</html>

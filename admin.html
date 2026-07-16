@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Circuit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">Circuit</a>
+    <div class="nav-right">
+      <a href="index.html" class="subscribe-btn" style="background:transparent; color:var(--ink-soft); border:1px solid var(--line-strong);">← Back to site</a>
+    </div>
+  </div>
+</header>
+
+<!-- Simple lock screen. NOTE: this is a basic client-side gate for convenience,
+     not real security — anyone who views the page source can see the password.
+     See the deployment notes for a real access-control option. -->
+<div class="admin-lock" id="lockScreen">
+  <h2>Admin access</h2>
+  <p>Enter the admin password to manage posts.</p>
+  <input type="password" id="pwInput" placeholder="Password">
+  <button id="pwSubmit">Enter</button>
+  <p class="err" id="pwErr">Wrong password — try again.</p>
+</div>
+
+<div class="admin-wrap" id="adminPanel" style="display:none;">
+  <div class="admin-head">
+    <h1>Manage posts</h1>
+    <button class="btn secondary" id="logoutBtn">Log out</button>
+  </div>
+
+  <div class="banner" id="banner"></div>
+
+  <!-- Add / Edit form -->
+  <div class="admin-form">
+    <h3 id="formHeading" style="margin-bottom:18px; font-size:18px;">Add a new post</h3>
+    <input type="hidden" id="editSlug">
+
+    <div class="field">
+      <label>Title</label>
+      <input type="text" id="fTitle" placeholder="e.g. Why edge computing is having a moment">
+    </div>
+
+    <div class="field">
+      <label>Summary (shown on cards and at the top of the article)</label>
+      <textarea id="fDek" style="min-height:80px;" placeholder="One or two sentences that sum up the story"></textarea>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label>Category</label>
+        <select id="fCategory">
+          <option value="ai">AI</option>
+          <option value="startup">Startups</option>
+          <option value="security">Security</option>
+          <option value="apps">Apps</option>
+          <option value="reviews">Reviews</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Author name</label>
+        <input type="text" id="fAuthor" placeholder="e.g. Sara Khalid">
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label>Publish date</label>
+        <input type="date" id="fDate">
+      </div>
+      <div class="field">
+        <label>Read time</label>
+        <input type="text" id="fReadTime" placeholder="e.g. 4 min read">
+      </div>
+    </div>
+
+    <div class="field">
+      <label><input type="checkbox" id="fFeatured" style="width:auto; display:inline-block; margin-right:6px;"> Feature this as the homepage top story</label>
+    </div>
+
+    <div class="field">
+      <label>Article body</label>
+      <textarea id="fBody" placeholder="Write each paragraph on its own line. Start a line with ## to make it a subheading."></textarea>
+      <p class="hint">Blank lines separate paragraphs. A line starting with <code>##</code> becomes a subheading.</p>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn" id="saveBtn">Save post</button>
+      <button class="btn secondary" id="cancelEditBtn" style="display:none;">Cancel edit</button>
+    </div>
+  </div>
+
+  <!-- Existing posts -->
+  <h3 style="font-size:16px; margin-bottom:14px;">All posts (<span id="postCount">0</span>)</h3>
+  <div id="postList"></div>
+
+  <!-- Export -->
+  <div class="export-box">
+    <h3>Publish your changes to the live site</h3>
+    <p>
+      Everything above is saved only in <strong>this browser</strong>. Visitors on other devices won't see it
+      until you export it and update the site's <code>posts.js</code> file. Click "Generate export", copy the code below,
+      then replace the <code>DEFAULT_POSTS</code> array in <code>posts.js</code> with it and re-upload the site.
+    </p>
+    <div class="form-actions" style="margin-bottom:14px;">
+      <button class="btn secondary" id="exportBtn">Generate export</button>
+      <button class="btn secondary" id="copyExportBtn" style="display:none;">Copy code</button>
+    </div>
+    <textarea id="exportOutput" readonly placeholder="Click 'Generate export' to see the code here..." style="display:none;"></textarea>
+  </div>
+</div>
+
+<script src="posts.js"></script>
+<script>
+  // ---------- Access gate ----------
+  // Change this password before you deploy. This is a convenience lock,
+  // not real security — see deployment notes.
+  const ADMIN_PASSWORD = "circuit2026";
+
+  const lockScreen = document.getElementById('lockScreen');
+  const adminPanel = document.getElementById('adminPanel');
+  const pwInput = document.getElementById('pwInput');
+  const pwErr = document.getElementById('pwErr');
+
+  function tryUnlock(){
+    if (pwInput.value === ADMIN_PASSWORD) {
+      sessionStorage.setItem('circuit_admin_ok', '1');
+      showPanel();
+    } else {
+      pwErr.style.display = 'block';
+    }
+  }
+  document.getElementById('pwSubmit').addEventListener('click', tryUnlock);
+  pwInput.addEventListener('keydown', e => { if (e.key === 'Enter') tryUnlock(); });
+
+  document.getElementById('logoutBtn').addEventListener('click', () => {
+    sessionStorage.removeItem('circuit_admin_ok');
+    location.reload();
+  });
+
+  function showPanel(){
+    lockScreen.style.display = 'none';
+    adminPanel.style.display = 'block';
+    renderPostList();
+  }
+
+  if (sessionStorage.getItem('circuit_admin_ok') === '1') showPanel();
+
+  // ---------- Post management ----------
+  const catLabels = { ai: 'AI', startup: 'Startups', security: 'Security', apps: 'Apps', reviews: 'Reviews' };
+
+  const fTitle = document.getElementById('fTitle');
+  const fDek = document.getElementById('fDek');
+  const fCategory = document.getElementById('fCategory');
+  const fAuthor = document.getElementById('fAuthor');
+  const fDate = document.getElementById('fDate');
+  const fReadTime = document.getElementById('fReadTime');
+  const fFeatured = document.getElementById('fFeatured');
+  const fBody = document.getElementById('fBody');
+  const editSlug = document.getElementById('editSlug');
+  const formHeading = document.getElementById('formHeading');
+  const cancelEditBtn = document.getElementById('cancelEditBtn');
+  const banner = document.getElementById('banner');
+
+  function showBanner(text){
+    banner.textContent = text;
+    banner.classList.add('show');
+    setTimeout(() => banner.classList.remove('show'), 3000);
+  }
+
+  function resetForm(){
+    editSlug.value = '';
+    fTitle.value = '';
+    fDek.value = '';
+    fCategory.value = 'ai';
+    fAuthor.value = '';
+    fDate.value = new Date().toISOString().slice(0,10);
+    fReadTime.value = '';
+    fFeatured.checked = false;
+    fBody.value = '';
+    formHeading.textContent = 'Add a new post';
+    cancelEditBtn.style.display = 'none';
+  }
+  resetForm();
+
+  document.getElementById('saveBtn').addEventListener('click', () => {
+    if (!fTitle.value.trim() || !fDek.value.trim() || !fAuthor.value.trim() || !fBody.value.trim()) {
+      showBanner('Please fill in title, summary, author, and body before saving.');
+      return;
+    }
+
+    const posts = loadPosts();
+    const bodyLines = fBody.value.split(/\n\s*\n|\n/).map(s => s.trim()).filter(Boolean);
+    const body = bodyLines.map(line => {
+      if (line.startsWith('##')) return { type: 'h2', text: line.replace(/^##\s*/, '') };
+      return { type: 'p', text: line };
+    });
+
+    if (editSlug.value) {
+      // Update existing
+      const idx = posts.findIndex(p => p.slug === editSlug.value);
+      if (idx > -1) {
+        posts[idx] = {
+          ...posts[idx],
+          title: fTitle.value.trim(),
+          dek: fDek.value.trim(),
+          metaDescription: fDek.value.trim().slice(0, 160),
+          category: fCategory.value,
+          categoryLabel: catLabels[fCategory.value],
+          author: fAuthor.value.trim(),
+          date: fDate.value,
+          readTime: fReadTime.value.trim() || '3 min read',
+          featured: fFeatured.checked,
+          body
+        };
+      }
+      if (fFeatured.checked) posts.forEach(p => { if (p.slug !== editSlug.value) p.featured = false; });
+      showBanner('Post updated.');
+    } else {
+      // New post
+      let slug = slugify(fTitle.value);
+      let uniqueSlug = slug;
+      let n = 2;
+      while (posts.some(p => p.slug === uniqueSlug)) { uniqueSlug = slug + '-' + n; n++; }
+
+      if (fFeatured.checked) posts.forEach(p => p.featured = false);
+
+      posts.push({
+        slug: uniqueSlug,
+        title: fTitle.value.trim(),
+        dek: fDek.value.trim(),
+        metaDescription: fDek.value.trim().slice(0, 160),
+        keywords: [catLabels[fCategory.value].toLowerCase(), 'tech news'],
+        category: fCategory.value,
+        categoryLabel: catLabels[fCategory.value],
+        author: fAuthor.value.trim(),
+        date: fDate.value,
+        readTime: fReadTime.value.trim() || '3 min read',
+        featured: fFeatured.checked,
+        body,
+        sourceName: null,
+        sourceLink: null
+      });
+      showBanner('Post published.');
+    }
+
+    savePosts(posts);
+    resetForm();
+    renderPostList();
+  });
+
+  cancelEditBtn.addEventListener('click', resetForm);
+
+  function editPost(slug){
+    const post = getPostBySlug(slug);
+    if (!post) return;
+    editSlug.value = post.slug;
+    fTitle.value = post.title;
+    fDek.value = post.dek;
+    fCategory.value = post.category;
+    fAuthor.value = post.author;
+    fDate.value = post.date;
+    fReadTime.value = post.readTime;
+    fFeatured.checked = !!post.featured;
+    fBody.value = post.body.map(b => b.type === 'h2' ? '## ' + b.text : b.text).join('\n\n');
+    formHeading.textContent = 'Edit post';
+    cancelEditBtn.style.display = 'inline-block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function deletePost(slug){
+    if (!confirm('Delete this post? This cannot be undone.')) return;
+    const posts = loadPosts().filter(p => p.slug !== slug);
+    savePosts(posts);
+    renderPostList();
+    showBanner('Post deleted.');
+  }
+
+  function renderPostList(){
+    const posts = loadPosts().slice().sort((a,b) => new Date(b.date) - new Date(a.date));
+    document.getElementById('postCount').textContent = posts.length;
+    const list = document.getElementById('postList');
+    list.innerHTML = posts.map(p => `
+      <div class="post-row">
+        <div class="post-row-info">
+          <h4>${p.title} ${p.featured ? '<span class="tag ai" style="margin-left:6px;">Featured</span>' : ''}</h4>
+          <p>${catLabels[p.category]} · ${p.author} · ${formatDate(p.date)}</p>
+        </div>
+        <div class="post-row-actions">
+          <button onclick="window.open('article.html?slug=${p.slug}','_blank')">View</button>
+          <button onclick="editPost('${p.slug}')">Edit</button>
+          <button class="del" onclick="deletePost('${p.slug}')">Delete</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // ---------- Export ----------
+  document.getElementById('exportBtn').addEventListener('click', () => {
+    const posts = loadPosts();
+    const code = "const DEFAULT_POSTS = " + JSON.stringify(posts, null, 2) + ";";
+    const output = document.getElementById('exportOutput');
+    output.value = code;
+    output.style.display = 'block';
+    document.getElementById('copyExportBtn').style.display = 'inline-block';
+  });
+
+  document.getElementById('copyExportBtn').addEventListener('click', () => {
+    const output = document.getElementById('exportOutput');
+    output.select();
+    navigator.clipboard.writeText(output.value);
+    showBanner('Copied — paste it into posts.js, replacing the DEFAULT_POSTS array.');
+  });
+</script>
+
+</body>
+</html>
