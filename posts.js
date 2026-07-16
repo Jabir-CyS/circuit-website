@@ -17,7 +17,7 @@ const DEFAULT_POSTS = [
     "author": "Sara Khalid",
     "date": "2026-07-13",
     "readTime": "4 min read",
-    "featured": true,
+    "featured": false,
     "body": [
       {
         "type": "p",
@@ -303,6 +303,152 @@ const DEFAULT_POSTS = [
     ],
     "sourceName": null,
     "sourceLink": null
+  },
+  {
+    "slug": "the-operator-to-vc-pipeline-why-venture-capital-is-snapping-",
+    "title": "The Operator-to-VC Pipeline: Why Venture Capital is Snapping Up OpenAI Talent",
+    "dek": "Venture firms are no longer just looking for financial wizards; they need partners who have navigated the scaling bottlenecks of the generative AI boom.",
+    "metaDescription": "Venture capital firms are hiring OpenAI veterans like Ryan Beiermeister to cut through the AI hype and spot genuine technical innovation.",
+    "keywords": [
+      "venture capital trends",
+      "openai alumni",
+      "founders fund",
+      "ai investing",
+      "tech talent acquisition"
+    ],
+    "category": "ai",
+    "categoryLabel": "AI",
+    "author": "Circuit Desk",
+    "date": "2026-07-16",
+    "readTime": "2 min read",
+    "featured": true,
+    "body": [
+      {
+        "type": "p",
+        "text": "When venture capital firm Founders Fund announced former OpenAI executive Ryan Beiermeister as its newest partner, it represented more than just a standard executive hire. It highlighted a growing trend in Silicon Valley: the aggressive migration of elite artificial intelligence operators into the world of venture capital."
+      },
+      {
+        "type": "p",
+        "text": "As the market becomes saturated with startups claiming to revolutionize industries through machine learning, venture firms are finding that traditional financial analysis is no longer enough. To separate genuine technical breakthroughs from clever marketing wrappers, investors need partners who have spent time inside the labs building the technology."
+      },
+      {
+        "type": "h2",
+        "text": "Cutting Through the AI Hype Cycle"
+      },
+      {
+        "type": "p",
+        "text": "For the past two years, early-stage AI investing has been characterized by astronomical valuations and rapid deal-making. However, as the initial excitement cools, the industry is entering a more sober phase. Investors are realizing that many AI startups lack defensible moats. Many are entirely dependent on third-party foundational models, leaving them vulnerable to platform risk."
+      },
+      {
+        "type": "p",
+        "text": "This is where operators like Beiermeister come in. Having managed product and strategy at OpenAI during its most critical growth phase, she brings a deep understanding of what is actually difficult to build. An investor who understands model architecture, API dependency, and compute limitations can conduct a level of due diligence that generalist investors simply cannot match."
+      },
+      {
+        "type": "h2",
+        "text": "The Rise of the OpenAI 'Mafia'"
+      },
+      {
+        "type": "p",
+        "text": "The term 'PayPal Mafia' was coined to describe the alumni of the payments giant who went on to dominate Silicon Valley. Today, a similar phenomenon is occurring with OpenAI. Former employees are leaving the research lab to launch their own heavily funded startups, such as Anthropic and Covariant, or to join the investment firms funding them."
+      },
+      {
+        "type": "p",
+        "text": "VC firms are eager to tap into this network. Hiring an OpenAI alumnus does not just bring technical expertise; it brings a highly valuable rolodex. In a hyper-competitive funding environment, personal connections to the next wave of departing researchers can be the difference between winning or missing out on a hot seed round."
+      },
+      {
+        "type": "h2",
+        "text": "What This Means for Founders"
+      },
+      {
+        "type": "p",
+        "text": "For startups pitching these firms, the bar for technical viability is rising. Founders can no longer rely on hand-wavy explanations of their technology when sitting across the table from a partner who helped scale ChatGPT. Pitch decks will face rigorous scrutiny on unit economics, data pipelines, and hardware efficiency."
+      },
+      {
+        "type": "p",
+        "text": "Ultimately, this shift is healthy for the ecosystem. By bringing real-world operational experience into investment decisions, venture capital can direct funding toward genuine innovation rather than superficial applications. As AI matures into an infrastructure-heavy industry, the firms that succeed will be those that know how the technology actually works under the hood."
+      }
+    ],
+    "sourceName": "TechCrunch",
+    "sourceLink": "https://techcrunch.com/2026/07/16/founders-fund-hires-former-openai-exec-ryan-beiermeister-and-not-because-of-her-mafia-skills/",
+    "image": "https://images.unsplash.com/photo-1628062699790-7c45262b82b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNDgzfDB8MXxzZWFyY2h8MXx8bW9kZXJuJTIwb2ZmaWNlJTIwbWVldGluZyUyMHJvb218ZW58MHwwfHx8MTc4NDI0MjI5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageAlt": "A sleek, modern venture capital office meeting room with floor-to-ceiling windows overlooking a city skyline.",
+    "imageCredit": {
+      "name": "Michael Fousert",
+      "url": "https://unsplash.com/@michaelfousert?utm_source=circuit&utm_medium=referral"
+    }
+  },
+  {
+    "slug": "your-digital-twin-is-ready-for-the-boardroom-google-workspac",
+    "title": "Your Digital Twin Is Ready for the Boardroom: Google Workspace Pushes AI Avatars into the Office",
+    "dek": "By integrating personalized AI avatars into Google Vids, the tech giant is betting that your next corporate update should be delivered by a digital clone.",
+    "metaDescription": "Google is adding personalized AI avatars to Google Vids, allowing Workspace users to create digital clones. Here is what it means for office culture.",
+    "keywords": [
+      "google vids",
+      "ai avatars",
+      "digital twins",
+      "google workspace",
+      "ai video generator"
+    ],
+    "category": "ai",
+    "categoryLabel": "AI",
+    "author": "Circuit Desk",
+    "date": "2026-07-16",
+    "readTime": "2 min read",
+    "featured": false,
+    "body": [
+      {
+        "type": "p",
+        "text": "Recording a five-minute product demo or training video shouldn't require three hours of prep, a ring light, and ten failed takes. At least, that is the pitch behind the latest update to Google Vids, the search giant's enterprise video creation tool. By integrating Gemini-powered personalized avatars, Google is aiming to eliminate the friction of getting on camera by letting a digital version of you do the talking."
+      },
+      {
+        "type": "p",
+        "text": "This update allows Workspace users to train an AI model on their own likeness and voice, generating a 'digital twin' that can read scripts, deliver presentations, and star in training materials. Powered by Google's Gemini Omni model, the system also streamlines the creation process by generating video storyboards, b-roll, and background music from simple text prompts and reference images."
+      },
+      {
+        "type": "h2",
+        "text": "The Rise of Asynchronous Office Video"
+      },
+      {
+        "type": "p",
+        "text": "For years, modern workplaces have championed asynchronous video tools like Loom as a cure for meeting fatigue. It is easier to send a quick walkthrough than to coordinate schedules across three time zones. Yet, actually recording those videos remains a chore. Many employees suffer from camera anxiety, and minor verbal slips often lead to endless re-recordings."
+      },
+      {
+        "type": "p",
+        "text": "AI avatars shift the paradigm from performance to composition. Instead of performing, a user simply writes a script, uploads a slide deck, and lets their digital clone deliver the message. In theory, this democratizes high-quality video production inside the enterprise, allowing HR managers, product leads, and sales representatives to scale their communication without dedicating hours to video production."
+      },
+      {
+        "type": "h2",
+        "text": "Crossing the Corporate Uncanny Valley"
+      },
+      {
+        "type": "p",
+        "text": "While the efficiency gains are obvious, the introduction of digital twins to internal communications brings deep psychological and security questions. The human brain is highly sensitive to subtle artificiality in voice and facial movement. If a manager delivers bad news, such as a restructuring or a policy change, through an AI avatar, the lack of authentic human presence could alienate employees."
+      },
+      {
+        "type": "p",
+        "text": "Furthermore, the rise of deepfakes raises the stakes for enterprise security. Google will need robust verification guardrails to ensure that employees cannot create unauthorized clones of executives or coworkers. If identity verification is compromised, the corporate digital twin could quickly become a powerful tool for sophisticated internal phishing attacks."
+      },
+      {
+        "type": "h2",
+        "text": "The Fight for the Enterprise AI Desktop"
+      },
+      {
+        "type": "p",
+        "text": "Google is far from the first company to explore this space. Startups like HeyGen, Synthesia, and Hour One have spent the last few years perfecting hyper-realistic AI avatars, gaining significant traction among marketing teams and educational content creators. However, Google holds a massive distribution advantage."
+      },
+      {
+        "type": "p",
+        "text": "By embedding these capabilities directly into Google Workspace, Google bypasses the need for companies to sign new software-as-a-service contracts. Your AI avatar will live right alongside your Docs, Sheets, and Slides. As these digital clones become standard workplace tools, the line between authentic human presence and automated representation will continue to blur, changing how we define 'face time' in the digital age."
+      }
+    ],
+    "sourceName": "TechCrunch",
+    "sourceLink": "https://techcrunch.com/2026/07/16/google-vids-now-lets-you-star-in-your-own-ai-videos/",
+    "image": "https://images.unsplash.com/photo-1614963326505-843868e1d83a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNDgzfDB8MXxzZWFyY2h8MXx8bGFwdG9wJTIwc2NyZWVuJTIwdmlkZW8lMjBlZGl0aW5nJTIwc29mdHdhcmV8ZW58MHwwfHx8MTc4NDI0MjMyM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageAlt": "A close-up of a laptop screen displaying modern video editing and creation tools in an office setting.",
+    "imageCredit": {
+      "name": "Sanjeev Nagaraj",
+      "url": "https://unsplash.com/@_sanjeev_ngrj_?utm_source=circuit&utm_medium=referral"
+    }
   }
 ];
 
