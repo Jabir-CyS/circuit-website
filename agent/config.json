@@ -1,0 +1,16 @@
+{
+  "feeds": [
+    { "name": "TechCrunch", "url": "https://techcrunch.com/feed/", "default_category": "startup" },
+    { "name": "The Verge", "url": "https://www.theverge.com/rss/index.xml", "default_category": "ai" },
+    { "name": "Ars Technica", "url": "https://feeds.arstechnica.com/arstechnica/index", "default_category": "security" }
+  ],
+  "max_new_posts_per_run": 3,
+  "model": "gemini-2.5-pro",
+  "category_keywords": {
+    "ai": ["ai", "artificial intelligence", "openai", "chatgpt", "llm", "machine learning", "model"],
+    "security": ["security", "hack", "breach", "vulnerability", "phishing", "malware", "cyber"],
+    "startup": ["startup", "funding", "raise", "seed", "series a", "series b", "venture", "founder"],
+    "apps": ["app", "ios", "android", "google play", "app store"],
+    "reviews": ["review", "hands-on", "tested", "we tried"]
+  }
+}
