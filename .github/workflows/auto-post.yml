@@ -1,0 +1,42 @@
+name: Auto-post new articles
+
+# Runs every 3 hours (8x/day) — kept deliberately not-too-frequent so that,
+# even at up to 3 articles per run, total daily requests stay comfortably
+# under Gemini's free-tier daily limit for gemini-2.5-pro (~50-100/day).
+# Can also be triggered manually from the Actions tab ("Run workflow" button).
+on:
+  schedule:
+    - cron: "0 */3 * * *"
+  workflow_dispatch:
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install feedparser google-genai
+
+      - name: Run the agent
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+        run: python3 agent/agent.py
+
+      - name: Rebuild static SEO pages
+        run: python3 agent/build_static.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "circuit-bot"
+          git config user.email "circuit-bot@users.noreply.github.com"
+          git add agent/posts_data.json agent/state.json posts.js articles sitemap.xml robots.txt
+          git diff --cached --quiet || git commit -m "Auto-post: new articles from agent"
+          git push
