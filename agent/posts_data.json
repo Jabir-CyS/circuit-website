@@ -312,7 +312,7 @@
     "author": "Circuit Desk",
     "date": "2026-07-16",
     "readTime": "2 min read",
-    "featured": true,
+    "featured": false,
     "body": [
       {
         "type": "p",
@@ -439,6 +439,79 @@
     "imageCredit": {
       "name": "Sanjeev Nagaraj",
       "url": "https://unsplash.com/@_sanjeev_ngrj_?utm_source=circuit&utm_medium=referral"
+    }
+  },
+  {
+    "slug": "why-the-food-supply-chain-has-become-ransomware-s-newest-tar",
+    "title": "Why the Food Supply Chain Has Become Ransomware’s Newest Target",
+    "dek": "The suspension of production at Coca-Cola’s Fairlife dairy highlights the extreme leverage hackers gain when targeting perishable, just-in-time agricultural logistics.",
+    "metaDescription": "The ransomware attack on Coca-Cola’s Fairlife unit exposes how digital extortion can easily paralyze physical food manufacturing and supply chains.",
+    "keywords": [
+      "ransomware",
+      "food supply chain security",
+      "industrial cybersecurity",
+      "fairlife cyber attack",
+      "operational technology security"
+    ],
+    "category": "ai",
+    "categoryLabel": "AI",
+    "author": "Circuit Desk",
+    "date": "2026-07-17",
+    "readTime": "2 min read",
+    "featured": true,
+    "body": [
+      {
+        "type": "p",
+        "text": "When a cybersecurity breach hits a software company, the immediate damage is measured in lost data and developer downtime. When it hits a dairy processor, the consequences quickly turn physical, threatening perishable goods and fracturing highly coordinated, time-sensitive supply chains."
+      },
+      {
+        "type": "p",
+        "text": "The recent production halt at Coca-Cola’s Fairlife dairy division in the United States following a cyber incident is a stark reminder of this vulnerability. For cybercriminals, targeting the agricultural sector is not about stealing proprietary recipes; it is about exploiting the extreme pressure of expiration dates to force a quick payout."
+      },
+      {
+        "type": "h2",
+        "text": "The High Cost of Spoilage Leverage"
+      },
+      {
+        "type": "p",
+        "text": "Modern food production operates on a 'just-in-time' logistics model. Raw milk, meat, and fresh produce cannot sit in trucks or warehouses indefinitely. If a dairy facility's automated sorting, pasteurizing, or packaging systems are locked by ransomware, the entire pipeline grinds to a halt within hours."
+      },
+      {
+        "type": "p",
+        "text": "This creates an asymmetric advantage for attackers. While a typical corporate office might spend weeks negotiating with hackers or restoring systems from backups, food producers face a ticking clock. If they do not resolve the issue immediately, millions of dollars in raw materials will literally spoil, compounding the financial damage of the ransom itself."
+      },
+      {
+        "type": "h2",
+        "text": "The Collision of IT and Operational Technology"
+      },
+      {
+        "type": "p",
+        "text": "Historically, factory floors and processing plants were 'air-gapped'—completely isolated from the internet. Today, industrial control systems (ICS) and operational technology (OT) are increasingly connected to corporate IT networks to improve efficiency, track inventory, and enable remote monitoring."
+      },
+      {
+        "type": "p",
+        "text": "This convergence has opened a dangerous back door. A single phishing email sent to an administrative employee can allow hackers to pivot from the corporate network directly into the software governing pasteurization temperatures, automated bottling lines, and shipping manifests. Once inside, disabling a single critical PLC (programmable logic controller) can freeze an entire multi-state operation."
+      },
+      {
+        "type": "h2",
+        "text": "A Growing Threat to Critical Infrastructure"
+      },
+      {
+        "type": "p",
+        "text": "Securing these environments requires a fundamental shift in how food and beverage manufacturers approach digital defense. Security teams must treat factory-floor OT with the same rigor as sensitive financial databases. This means implementing strict network segmentation, conducting regular tabletop simulations of physical plant shutdowns, and maintaining offline backups of critical industrial system configurations."
+      },
+      {
+        "type": "p",
+        "text": "As agricultural conglomerates continue to digitize, they must accept that they are no longer just food companies—they are technology companies that happen to package milk and meat. Until cybersecurity is treated as a core component of food safety, the critical systems that feed the public will remain highly attractive targets for digital extortion."
+      }
+    ],
+    "sourceName": "TechCrunch",
+    "sourceLink": "https://techcrunch.com/2026/07/16/coca-cola-suspended-production-at-its-fairlife-dairy-after-a-ransomware-attack/",
+    "image": "https://images.unsplash.com/photo-1619496515530-ad345adf5a8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNDgzfDB8MXxzZWFyY2h8MXx8bWlsayUyMHByb2Nlc3NpbmclMjBwbGFudCUyMGluZHVzdHJpYWx8ZW58MHwwfHx8MTc4NDI3NTQ5OXww&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageAlt": "Stainless steel pipes and pasteurization machinery inside a modern dairy processing facility.",
+    "imageCredit": {
+      "name": "Dwayne Pounds",
+      "url": "https://unsplash.com/@dwaynep2026?utm_source=circuit&utm_medium=referral"
     }
   }
 ]
