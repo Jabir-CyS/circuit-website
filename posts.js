@@ -660,6 +660,141 @@ const DEFAULT_POSTS = [
       "name": "personalgraphic.com",
       "url": "https://unsplash.com/@personal_graphic?utm_source=circuit&utm_medium=referral"
     }
+  },
+  {
+    "slug": "the-rise-of-the-uninvited-bot-and-the-death-of-the-off-the-r",
+    "title": "The Rise of the Uninvited Bot and the Death of the Off-the-Record Meeting",
+    "dek": "As AI assistants quietly log and summarize every workplace conversation, professionals are starting to push back against the permanent digital archive of their work lives.",
+    "metaDescription": "As AI transcription tools log every meeting, workers face a psychological toll. Here is why the pushback against permanent recording is growing.",
+    "keywords": [
+      "ai transcription tools",
+      "meeting fatigue",
+      "workplace privacy",
+      "zoom ai companion",
+      "digital surveillance"
+    ],
+    "category": "security",
+    "categoryLabel": "Security",
+    "author": "Circuit Desk",
+    "date": "2026-07-17",
+    "readTime": "2 min read",
+    "featured": false,
+    "body": [
+      {
+        "type": "p",
+        "text": "The moment an uninvited AI transcription bot silently slips into a digital meeting room, the atmosphere shifts. What was meant to be a fluid, creative brainstorm suddenly carries the weight of a legal deposition."
+      },
+      {
+        "type": "p",
+        "text": "Over the past two years, automated meeting summaries have transitioned from a niche productivity hack to an unavoidable corporate standard. Services promise to liberate workers from note-taking, yet this blanket documentation of our professional lives comes with a hidden psychological toll that software vendors rarely discuss."
+      },
+      {
+        "type": "h2",
+        "text": "The Tyranny of the Permanent Record"
+      },
+      {
+        "type": "p",
+        "text": "When every stutter, half-formed idea, or casual vent session is transcribed, indexed, and summarized, collaboration suffers. True innovation requires the psychological safety to say stupid things, iterate, and fail in real-time. If every word is immortalized in a searchable database, employees naturally pivot to a defensive, highly sanitized version of communication."
+      },
+      {
+        "type": "p",
+        "text": "There is also a deeper irony at play: we are generating millions of pages of meeting summaries that almost no one actually reads. AI is essentially transcribing meetings so that another AI can summarize them, creating a feedback loop of empty data that alienates the humans in the loop."
+      },
+      {
+        "type": "h2",
+        "text": "Establishing New Rules of Engagement"
+      },
+      {
+        "type": "p",
+        "text": "In response to this hyper-documentation, a quiet counter-movement is beginning to take shape. Some teams are establishing strict consent rules, requiring explicit permission before any recording tool is allowed to join a call. Others are implementing corporate policies that automatically purge transcripts after a short window, preserving the ephemeral nature of daily work."
+      },
+      {
+        "type": "p",
+        "text": "Ultimately, technology should liberate us from administrative overhead, not turn the workplace into a high-fidelity panopticon. Protecting the right to speak freely—without the fear of a permanent transcript—is becoming the new benchmark for a healthy workplace culture."
+      }
+    ],
+    "sourceName": "TechCrunch",
+    "sourceLink": "https://techcrunch.com/2026/07/17/the-zoom-hack-that-says-dont-record-me/",
+    "image": "https://images.unsplash.com/photo-1612831455359-970e23a1e4e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNDgzfDB8MXxzZWFyY2h8MXx8bGFwdG9wJTIwc2NyZWVuJTIwdmlkZW8lMjBjYWxsJTIwaW50ZXJmYWNlfGVufDB8MHx8fDE3ODQzMjUwMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageAlt": "A laptop displaying a video conference screen with multiple participants and a digital assistant icon.",
+    "imageCredit": {
+      "name": "Surface",
+      "url": "https://unsplash.com/@surface?utm_source=circuit&utm_medium=referral"
+    }
+  },
+  {
+    "slug": "fremont-s-new-factory-floor-why-humanoid-robotics-is-groundi",
+    "title": "Fremont's New Factory Floor: Why Humanoid Robotics is Grounding Itself in Silicon Valley's Suburbs",
+    "dek": "Agility Robotics' new California facility highlights a growing trend: the race for humanoid robot supremacy is being fought in the physical world, not just in simulation.",
+    "metaDescription": "Agility Robotics' expansion to Fremont highlights a shift in the humanoid robot race, where physical testing grounds are the new competitive edge.",
+    "keywords": [
+      "humanoid robotics",
+      "agility robotics",
+      "digit robot",
+      "fremont hardware",
+      "tesla optimus",
+      "warehouse automation"
+    ],
+    "category": "ai",
+    "categoryLabel": "AI",
+    "author": "Circuit Desk",
+    "date": "2026-07-17",
+    "readTime": "2 min read",
+    "featured": false,
+    "body": [
+      {
+        "type": "p",
+        "text": "For years, Silicon Valley’s robotics revolution was largely a software story, told through simulated physics engines and virtual environments. But as bipedal machines transition from laboratory curiosities to actual industrial workers, the battleground is shifting to the physical world—specifically, to the industrial parks of Fremont, California."
+      },
+      {
+        "type": "p",
+        "text": "The East Bay suburb, best known globally as the home of Tesla’s first major automotive assembly plant, is quietly becoming the epicenter of the hardware-heavy humanoid robotics sector. Agility Robotics’ decision to open a dedicated training and deployment center for its bipedal Digit robot in Fremont is the latest indicator that proximity to manufacturing talent and real-world supply chains is the new competitive moat."
+      },
+      {
+        "type": "h2",
+        "text": "The Battle for Hardware Talent"
+      },
+      {
+        "type": "p",
+        "text": "Fremont is a logical landing pad for companies trying to build complex physical systems. Decades of automotive manufacturing, semiconductor equipment assembly, and solar technology development have left the region with a dense concentration of specialized technicians, mechanical engineers, and hardware testing facilities."
+      },
+      {
+        "type": "p",
+        "text": "By establishing a footprint here, robotics firms are positioning themselves to poach talent from legacy automotive lines and aerospace firms. But they are also setting up shop in the shadow of Tesla's Optimus program. While Tesla CEO Elon Musk promises millions of humanoid robots working in factories, startups like Agility are pursuing a more immediate, pragmatic path to commercialization."
+      },
+      {
+        "type": "h2",
+        "text": "Pragmatism Over Hype"
+      },
+      {
+        "type": "p",
+        "text": "Unlike the sleek, highly anthropomorphic designs favored by some tech giants, Agility's Digit is a study in functional industrial design. With its backwards-bending knees and focus on carrying tote boxes, it prioritizes stability and utility over mimicking the human form perfectly."
+      },
+      {
+        "type": "p",
+        "text": "A localized training center allows Agility to run continuous loops of real-world testing, mimicking the exact warehouse workflows used by early adopters like Amazon and GXO Logistics. Humanoid robots are notoriously difficult to calibrate; minor changes in floor texture, lighting, or battery level can cause catastrophic balance failures. Solving these edge cases requires thousands of hours of physical repetition, something that cannot be easily replicated in a pure software lab."
+      },
+      {
+        "type": "h2",
+        "text": "The Industrial Bay Area"
+      },
+      {
+        "type": "p",
+        "text": "This geographic clustering suggests that the next phase of the robotics boom will look very different from the software-as-a-service gold rush. Building physical machines requires heavy capital, massive floor space, and local supply chains for precision parts."
+      },
+      {
+        "type": "p",
+        "text": "As more robotics companies establish physical testing grounds in manufacturing hubs, the distinction between pure tech companies and heavy industrial manufacturers is beginning to blur. The winners of this race won't just have the best artificial intelligence models; they will have the most robust, reliable hardware capable of surviving a grueling eight-hour shift on a concrete warehouse floor."
+      }
+    ],
+    "sourceName": "TechCrunch",
+    "sourceLink": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
+    "image": "https://images.unsplash.com/photo-1601132359864-c974e79890ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNDgzfDB8MXxzZWFyY2h8MXx8aHVtYW5vaWQlMjByb2JvdCUyMHdhcmVob3VzZXxlbnwwfDB8fHwxNzg0MzI1MDM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageAlt": "A bipedal humanoid robot standing in a modern warehouse environment holding a plastic bin.",
+    "imageCredit": {
+      "name": "Aideal Hwa",
+      "url": "https://unsplash.com/@aideal?utm_source=circuit&utm_medium=referral"
+    }
   }
 ];
 
