@@ -522,6 +522,144 @@ const DEFAULT_POSTS = [
       "name": "Dwayne Pounds",
       "url": "https://unsplash.com/@dwaynep2026?utm_source=circuit&utm_medium=referral"
     }
+  },
+  {
+    "slug": "local-power-vs-state-permits-san-francisco-s-renewed-push-to",
+    "title": "Local Power vs. State Permits: San Francisco’s Renewed Push to Curb Robotaxis",
+    "dek": "A major gridlock event has city leadership demanding that state regulators stop treating urban streets as consequence-free laboratories for autonomous vehicles.",
+    "metaDescription": "San Francisco's latest robotaxi gridlock sparks a fierce debate over municipal control versus state-level autonomous vehicle deregulation.",
+    "keywords": [
+      "autonomous vehicles",
+      "waymo san francisco",
+      "robotaxi regulation",
+      "daniel lurie",
+      "cpuc autonomous vehicles"
+    ],
+    "category": "ai",
+    "categoryLabel": "AI",
+    "author": "Circuit Desk",
+    "date": "2026-07-17",
+    "readTime": "2 min read",
+    "featured": false,
+    "body": [
+      {
+        "type": "p",
+        "text": "For hours, a cluster of driverless vehicles turned a busy San Francisco thoroughfare into an expensive, stationary parking lot, proving once again that software-defined traffic jams are a uniquely modern headache. The incident has reignited a simmering political battle over who actually controls the streets of America’s most prominent tech laboratory."
+      },
+      {
+        "type": "p",
+        "text": "Now, San Francisco Mayor Daniel Lurie is demanding that state regulators stop ignoring local concerns. The city's message is clear: the hands-off era of autonomous vehicle deployment must end."
+      },
+      {
+        "type": "h2",
+        "text": "The Jurisdictional Blindspot"
+      },
+      {
+        "type": "p",
+        "text": "At the heart of the conflict is a bizarre regulatory mismatch. While local police and city planners are responsible for maintaining order and safety on San Francisco’s streets, they have virtually no authority over the robotaxis operating on them. That power belongs to state-level agencies like the California Public Utilities Commission (CPUC) and the Department of Motor Vehicles."
+      },
+      {
+        "type": "p",
+        "text": "This setup has left city officials in an awkward position. They are forced to deal with the physical fallout of autonomous vehicle failures—such as blocked emergency vehicles, stalled transit buses, and sudden gridlock—without any legal mechanism to cap fleet sizes or issue fines for obstruction. When a driverless vehicle freezes, city towing services cannot easily move it, and local police cannot write a ticket to an empty driver’s seat in a way that forces systemic operational changes."
+      },
+      {
+        "type": "h2",
+        "text": "The Real-World Cost of Software Glitches"
+      },
+      {
+        "type": "p",
+        "text": "When a traditional software service crashes, users suffer a minor inconvenience. When an autonomous vehicle fleet suffers a connectivity loss or localization error, the consequences spill into the physical world. A single stalled vehicle can cascade into a multi-block traffic standstill within minutes, paralyzing public transit and delaying first responders."
+      },
+      {
+        "type": "p",
+        "text": "Mayor Lurie’s push for tougher rules focuses on accountability. Local leaders want real-time data sharing, stricter reporting requirements for minor incidents, and a direct line of communication to force vehicle removals. More importantly, there is a growing demand for a 'kill switch' mechanism—not to shut down the vehicles mid-drive, but to allow local authorities to halt fleet expansions when the technology repeatedly fails to play nice with urban infrastructure."
+      },
+      {
+        "type": "h2",
+        "text": "A New Model for Co-Regulation"
+      },
+      {
+        "type": "p",
+        "text": "The goal is not to ban autonomous vehicles entirely. San Francisco has long prided itself on being the cradle of tech innovation. However, the current model of treating public streets as beta-testing environments without local veto power is proving unsustainable."
+      },
+      {
+        "type": "p",
+        "text": "For AV companies to coexist peacefully with the cities they serve, the regulatory framework must evolve. State regulators must grant municipalities a seat at the table. Until local authorities have the power to enforce rules on robotaxi operators, the physical streets of San Francisco will remain at the mercy of remote software updates."
+      }
+    ],
+    "sourceName": "TechCrunch",
+    "sourceLink": "https://techcrunch.com/2026/07/16/san-francisco-mayor-pushes-for-tougher-rules-after-the-waymo-traffic-fiasco/",
+    "image": "https://images.unsplash.com/photo-1685984351005-a971d72c2e35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNDgzfDB8MXxzZWFyY2h8MXx8YXV0b25vbW91cyUyMGNhciUyMHJvb2YlMjBzZW5zb3J8ZW58MHwwfHx8MTc4NDI4NTA0OHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageAlt": "A close-up shot of the lidar and camera sensor rig mounted on the roof of an autonomous vehicle navigating a city street.",
+    "imageCredit": {
+      "name": "Timo Wielink",
+      "url": "https://unsplash.com/@timowielink?utm_source=circuit&utm_medium=referral"
+    }
+  },
+  {
+    "slug": "prompt-to-play-roblox-puts-generative-ai-game-design-in-pock",
+    "title": "Prompt-to-Play: Roblox Puts Generative AI Game Design in Pocket Form",
+    "dek": "By bringing text-to-world creation tools directly to its mobile app, Roblox is betting that the next wave of game developers won't need a PC—or a single line of code.",
+    "metaDescription": "Roblox is bringing generative AI game creation to mobile. Read our analysis on what prompt-to-play means for the future of user-generated content.",
+    "keywords": [
+      "roblox ai build",
+      "generative ai gaming",
+      "mobile game creation",
+      "roblox mobile app",
+      "ai game design"
+    ],
+    "category": "ai",
+    "categoryLabel": "AI",
+    "author": "Circuit Desk",
+    "date": "2026-07-17",
+    "readTime": "2 min read",
+    "featured": false,
+    "body": [
+      {
+        "type": "p",
+        "text": "For decades, making a video game required a desk, a powerful computer, and a steep learning curve. Roblox is attempting to erase those requirements entirely by letting its users build virtual worlds with nothing more than a smartphone and a few text prompts."
+      },
+      {
+        "type": "p",
+        "text": "The platform's new mobile creation features represent a massive shift in how generative AI is being integrated into consumer software. Instead of acting as an assistant for professional developers, AI is being positioned as a direct bridge from player to creator, right inside the app they already use daily."
+      },
+      {
+        "type": "h2",
+        "text": "The Mobile-First Creator Economy"
+      },
+      {
+        "type": "p",
+        "text": "Roblox’s strength has always been its massive creator ecosystem, but historically, the serious building happened in Roblox Studio on Windows or Mac. The mobile app was primarily for playing. By introducing generative AI toolsets directly into the mobile interface, Roblox is targeting a demographic that may not even own a traditional PC."
+      },
+      {
+        "type": "p",
+        "text": "Typing a simple description on a phone keyboard and watching a 3D environment assemble itself in seconds lowers the barrier to entry to virtually zero. This isn't just about convenience; it is about capturing the attention of millions of mobile-only users who previously lacked the technical literacy, or the hardware, to use complex design suites."
+      },
+      {
+        "type": "h2",
+        "text": "Curation Challenges in an Automated World"
+      },
+      {
+        "type": "p",
+        "text": "This democratization of game design comes with a significant catch. If anyone can spin up a fully functional 3D environment in thirty seconds, Roblox's discovery algorithms are going to face an unprecedented test. The platform is already crowded with millions of experiences, many of which struggle to find an audience."
+      },
+      {
+        "type": "p",
+        "text": "An influx of low-effort, AI-generated games could easily dilute the quality of the marketplace. For Roblox, the challenge will be distinguishing between genuinely creative, prompt-engineered experiences and low-quality spam that clutters search results. The platform will need to refine its moderation and curation algorithms just as quickly as it develops its creation tools."
+      },
+      {
+        "type": "p",
+        "text": "While the technical capabilities of these initial prompt-based mobile tools are relatively basic, they signal a clear direction for the industry. Game development is transitioning away from specialized software. In the near future, the distinction between playing a game and making one will be as simple as sending a text message."
+      }
+    ],
+    "sourceName": "TechCrunch",
+    "sourceLink": "https://techcrunch.com/2026/07/16/roblox-launches-an-ai-powered-game-creation-feature-in-its-mobile-app/",
+    "image": "https://images.unsplash.com/photo-1691207737881-0dd5d3aa732a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNDgzfDB8MXxzZWFyY2h8MXx8aGFuZHMlMjB0eXBpbmclMjBvbiUyMHNtYXJ0cGhvbmUlMjBzY3JlZW58ZW58MHwwfHx8MTc4NDI4NTA2Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageAlt": "A person typing on a smartphone screen, illustrating mobile-first creation tools.",
+    "imageCredit": {
+      "name": "personalgraphic.com",
+      "url": "https://unsplash.com/@personal_graphic?utm_source=circuit&utm_medium=referral"
+    }
   }
 ];
 
