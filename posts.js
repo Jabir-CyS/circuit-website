@@ -813,7 +813,7 @@ const DEFAULT_POSTS = [
     "author": "Circuit Desk",
     "date": "2026-07-18",
     "readTime": "2 min read",
-    "featured": true,
+    "featured": false,
     "body": [
       {
         "type": "p",
@@ -1090,6 +1090,230 @@ const DEFAULT_POSTS = [
     "imageCredit": {
       "name": "Kevin Ache",
       "url": "https://unsplash.com/@kevinache?utm_source=circuit&utm_medium=referral"
+    }
+  },
+  {
+    "slug": "grid-locked-what-waymo-s-service-pauses-reveal-about-autonom",
+    "title": "Grid-Locked: What Waymo's Service Pauses Reveal About Autonomous Fleet Vulnerability",
+    "dek": "A brief system suspension in San Francisco highlights how easily driverless car networks can be paralyzed by municipal power failures.",
+    "metaDescription": "A brief service suspension in San Francisco highlights how vulnerable autonomous vehicle fleets like Waymo remain to local power grid failures.",
+    "keywords": [
+      "waymo",
+      "autonomous vehicles",
+      "power grid reliability",
+      "san francisco tech",
+      "driverless cars",
+      "urban infrastructure"
+    ],
+    "category": "ai",
+    "categoryLabel": "AI",
+    "author": "Circuit Desk",
+    "date": "2026-07-19",
+    "readTime": "2 min read",
+    "featured": true,
+    "body": [
+      {
+        "type": "p",
+        "text": "A single power outage in San Francisco can do what human traffic jams rarely manage: freeze an entire fleet of autonomous vehicles in their tracks."
+      },
+      {
+        "type": "p",
+        "text": "Waymo's recent, brief service suspension in San Francisco following local power disruptions highlights a growing, overlooked challenge for autonomous vehicle (AV) operators. While tech companies have poured billions of dollars into perfecting machine learning models and sensor suites, their operations remain entirely at the mercy of aging municipal infrastructure."
+      },
+      {
+        "type": "h2",
+        "text": "The Invisible Infrastructure Dependency"
+      },
+      {
+        "type": "p",
+        "text": "AVs are often marketed as self-contained marvels of modern engineering, capable of navigating complex urban environments independently. However, they rely on a massive, invisible support network to function at scale. To run a commercial ride-hailing service, these vehicles need constant connectivity to remote assistance centers, real-time mapping updates, and localized charging hubs."
+      },
+      {
+        "type": "p",
+        "text": "When the municipal power grid fails, even briefly, it disrupts the critical backend systems required to monitor and dispatch these driverless fleets safely. Without stable electrical infrastructure to power local operations centers, charging depots, and telecom towers, the cars simply cannot operate safely."
+      },
+      {
+        "type": "h2",
+        "text": "The Operational Risk of Centralized Fleets"
+      },
+      {
+        "type": "p",
+        "text": "Unlike human drivers who can navigate a blackout using basic traffic laws and manual caution, autonomous fleets operate under a strict, centralized safety-first model. If a remote connection is lost or if charging infrastructure is compromised, operators must default to conservative protocols. This often means halting operations entirely to prevent vehicles from becoming hazards on darkened streets."
+      },
+      {
+        "type": "p",
+        "text": "While this abundance of caution keeps passengers safe, it also exposes a systemic vulnerability. As AV fleets scale to thousands of cars across multiple cities, localized grid failures could paralyze municipal transit networks. The centralization that makes AVs easy to manage also makes them uniquely vulnerable to single points of failure."
+      },
+      {
+        "type": "h2",
+        "text": "Preparing for a Power-Constrained Future"
+      },
+      {
+        "type": "p",
+        "text": "To truly integrate into the fabric of modern cities, autonomous vehicle companies will have to invest as heavily in infrastructure resilience as they do in software. This means building out redundant power systems, utilizing localized microgrids, and securing backup communication channels that can survive localized blackouts."
+      },
+      {
+        "type": "p",
+        "text": "The road to an autonomous future isn't just paved with better code. It requires a modern, resilient electrical grid capable of supporting the very machines we expect to redefine urban mobility."
+      }
+    ],
+    "sourceName": "TechCrunch",
+    "sourceLink": "https://techcrunch.com/2026/07/18/waymo-appears-to-pause-san-francisco-service-amidst-power-outage/",
+    "image": "https://images.unsplash.com/photo-1631347826177-de288776ed3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNDgzfDB8MXxzZWFyY2h8MXx8YXV0b25vbW91cyUyMGNhciUyMGNoYXJnaW5nJTIwc3RhdGlvbnxlbnwwfDB8fHwxNzg0NDI3OTAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageAlt": "A sleek autonomous vehicle plugged into a modern charging station on a city street.",
+    "imageCredit": {
+      "name": "Oxana Melis",
+      "url": "https://unsplash.com/@oksdesign?utm_source=circuit&utm_medium=referral"
+    }
+  },
+  {
+    "slug": "the-true-cost-of-china-s-ultra-cheap-ai-models",
+    "title": "The True Cost of China's Ultra-Cheap AI Models",
+    "dek": "As Moonshot AI upgrades its popular Kimi assistant, an aggressive price war in China is pushing LLM costs to near-zero, challenging Western business models.",
+    "metaDescription": "Moonshot AI's latest Kimi model highlights a massive price war in China's AI sector. Discover how ultra-low API costs could reshape global tech.",
+    "keywords": [
+      "moonshot ai",
+      "kimi assistant",
+      "china ai price war",
+      "large language models",
+      "generative ai economics"
+    ],
+    "category": "ai",
+    "categoryLabel": "AI",
+    "author": "Circuit Desk",
+    "date": "2026-07-19",
+    "readTime": "2 min read",
+    "featured": false,
+    "body": [
+      {
+        "type": "p",
+        "text": "While Silicon Valley's AI giants are locked in a race to build increasingly massive, expensive models, a very different kind of competition is unfolding across the Pacific. In China, generative AI is experiencing an aggressive, state-tolerated race to the bottom."
+      },
+      {
+        "type": "p",
+        "text": "Rather than charging premium subscription fees to recoup billions in development costs, Chinese AI pioneers are slashing prices to fractions of a cent, or giving their models away entirely. The latest upgrades to Moonshot AI's popular Kimi assistant have reignited a fierce debate: is this aggressive commoditization a threat to Western business models, or is it a preview of AI as a subsidized public utility?"
+      },
+      {
+        "type": "h2",
+        "text": "The Rise of Kimi and the Zero-Yield Strategy"
+      },
+      {
+        "type": "p",
+        "text": "Moonshot AI, one of China's so-called 'AI Tigers,' built its reputation on Kimi's ability to process massive amounts of text. By offering a colossal context window early on, Kimi became a darling of researchers and developers. But in China's hyper-competitive tech landscape, technical superiority is only half the battle. Price is the real weapon."
+      },
+      {
+        "type": "p",
+        "text": "Over the past year, tech giants like Alibaba, Baidu, and Tencent have initiated a brutal price war, cutting API fees for their proprietary models by up to 99%. Moonshot's upgrades arrive in an environment where intelligence is treated not as a luxury product, but as cheap, abundant infrastructure. This strategy forces startups to prioritize scale and user acquisition over immediate profitability, a move reminiscent of the early ride-hailing wars."
+      },
+      {
+        "type": "h2",
+        "text": "Market Capture vs. Public Utility"
+      },
+      {
+        "type": "p",
+        "text": "This aggressive discounting has led some Western observers to label the phenomenon 'AI communism'—a system where compute and intelligence are socialized, heavily subsidized, and stripped of traditional profit margins. But the reality is more pragmatic. It is a classic play for market capture, supercharged by local government support."
+      },
+      {
+        "type": "p",
+        "text": "Many of these Chinese AI firms operate with the help of state-backed green energy grids and subsidized regional compute centers. By lowering the financial barrier to entry, China aims to integrate AI into every facet of its traditional manufacturing and software industries. If the underlying models are virtually free, the economic dividend comes from the efficiency gains in the broader economy, not from selling API tokens."
+      },
+      {
+        "type": "h2",
+        "text": "The Global Spillover"
+      },
+      {
+        "type": "p",
+        "text": "For Western AI startups relying on high-margin software-as-a-service (SaaS) models, this price deflation presents a looming challenge. If highly capable, long-context models are available globally at near-zero cost, justifying a premium price tag for basic reasoning tasks will become increasingly difficult."
+      },
+      {
+        "type": "p",
+        "text": "However, cheap APIs come with strings attached. Developers utilizing these ultra-low-cost Chinese models must navigate strict domestic censorship laws and potential data privacy risks. For global enterprises, the trade-off between price and regulatory compliance remains a steep hurdle."
+      },
+      {
+        "type": "p",
+        "text": "Ultimately, the price wars led by companies like Moonshot AI prove that the future of artificial intelligence won't just be decided by parameters and benchmarks. It will be decided by who can afford to make intelligence too cheap to meter."
+      }
+    ],
+    "sourceName": "TechCrunch",
+    "sourceLink": "https://techcrunch.com/2026/07/18/kimi-threat-or-menace/",
+    "image": "https://images.unsplash.com/photo-1691435828932-911a7801adfb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNDgzfDB8MXxzZWFyY2h8MXx8c2VydmVyJTIwcm9vbSUyMGJsdWUlMjBsaWdodHN8ZW58MHwwfHx8MTc4NDQyNzkxMXww&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageAlt": "Rows of server racks illuminated by blue LED lights in a modern data center, representing the compute power behind large language models.",
+    "imageCredit": {
+      "name": "Albert Stoynov",
+      "url": "https://unsplash.com/@albertstoynov?utm_source=circuit&utm_medium=referral"
+    }
+  },
+  {
+    "slug": "the-ev-shakeout-why-automakers-are-quietly-killing-off-trans",
+    "title": "The EV Shakeout: Why Automakers Are Quietly Killing Off Transitional Models",
+    "dek": "As carmakers navigate fluctuating demand and maturing battery technology, a wave of early-generation electric vehicles is being retired.",
+    "metaDescription": "Automakers are retiring transitional electric vehicles to make way for dedicated platforms. Inside the strategic shift driving the EV market correction.",
+    "keywords": [
+      "ev market correction",
+      "discontinued electric vehicles",
+      "automotive transition",
+      "dedicated ev platforms",
+      "electric vehicle trends"
+    ],
+    "category": "ai",
+    "categoryLabel": "AI",
+    "author": "Circuit Desk",
+    "date": "2026-07-19",
+    "readTime": "2 min read",
+    "featured": false,
+    "body": [
+      {
+        "type": "p",
+        "text": "The first wave of the electric vehicle transition was defined by rush, compromise, and experimentation. Now, the cleanup begins."
+      },
+      {
+        "type": "p",
+        "text": "In recent months, automakers have quietly pruned their lineups, retiring several prominent electric models. While skeptics might point to these cancellations as evidence of a dying market, the reality is far more calculated. The industry is moving out of its awkward adolescence. Legacy brands are systematically purging stopgap models, compliance cars, and early-generation platforms to make room for what comes next."
+      },
+      {
+        "type": "h2",
+        "text": "The end of the stopgap era"
+      },
+      {
+        "type": "p",
+        "text": "Many of the electric cars currently exiting the market were never meant to be permanent fixtures. In the scramble to meet tightening emissions regulations and counter Tesla's rapid rise, many traditional carmakers took shortcuts. They retrofitted existing internal combustion engine (ICE) chassis to hold heavy battery packs, or rushed into short-term manufacturing partnerships to get something—anything—onto dealership lots."
+      },
+      {
+        "type": "p",
+        "text": "These transitional vehicles served their purpose. They allowed legacy brands to test supply chains, train dealership service departments, and gauge consumer appetite. However, they were also expensive to build, suffered from compromised packaging, and often failed to deliver the range or charging speeds of ground-up EV designs. Keeping them on life support no longer makes financial sense in a high-interest-rate environment where margins are under intense scrutiny."
+      },
+      {
+        "type": "h2",
+        "text": "The shift to dedicated architectures"
+      },
+      {
+        "type": "p",
+        "text": "Automotive manufacturing relies on scale. To make EVs profitable, manufacturers must move away from low-volume boutique models and transition to unified, modular platforms."
+      },
+      {
+        "type": "p",
+        "text": "By consolidating their lineups around single, scalable architectures, brands can produce sedans, crossovers, and delivery vans on the same assembly line. The elimination of older, bespoke EV models is a prerequisite for this consolidation. Every legacy model retired frees up factory floor space, battery supply allocations, and engineering talent for next-generation platforms that promise to dramatically lower production costs."
+      },
+      {
+        "type": "h2",
+        "text": "A healthier second wave"
+      },
+      {
+        "type": "p",
+        "text": "For consumers, this great pruning might look like a retreat, but it actually paves the way for a healthier market. The first-generation EVs being discontinued today will be replaced by vehicles that are lighter, more efficient, and significantly cheaper to purchase."
+      },
+      {
+        "type": "p",
+        "text": "Rather than a sign of weakness, the current wave of retirements represents a necessary correction. Automakers are finally treating electric vehicles not as a niche side project, but as the core of their future portfolios. The experimental phase is over; the era of industrial scale has begun."
+      }
+    ],
+    "sourceName": "TechCrunch",
+    "sourceLink": "https://techcrunch.com/2026/07/18/all-the-evs-that-were-discontinued-or-killed-off-in-the-u-s-this-year/",
+    "image": "https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNDgzfDB8MXxzZWFyY2h8MXx8ZWxlY3RyaWMlMjB2ZWhpY2xlcyUyMHBhcmtlZCUyMGNoYXJnaW5nfGVufDB8MHx8fDE3ODQ0Mjc5MjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageAlt": "A row of modern electric vehicles parked at a commercial charging station.",
+    "imageCredit": {
+      "name": "CHUTTERSNAP",
+      "url": "https://unsplash.com/@chuttersnap?utm_source=circuit&utm_medium=referral"
     }
   }
 ];
