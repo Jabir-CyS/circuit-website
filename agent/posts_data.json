@@ -1683,7 +1683,7 @@
     "author": "Circuit Desk",
     "date": "2026-07-22",
     "readTime": "2 min read",
-    "featured": true,
+    "featured": false,
     "body": [
       {
         "type": "p",
@@ -1737,6 +1737,79 @@
     "imageCredit": {
       "name": "Jakub Żerdzicki",
       "url": "https://unsplash.com/@jakubzerdzicki?utm_source=circuit&utm_medium=referral"
+    }
+  },
+  {
+    "slug": "the-gpu-cannibal-how-enterprise-ai-spending-is-starving-lega",
+    "title": "The GPU Cannibal: How Enterprise AI Spending is Starving Legacy Hardware",
+    "dek": "As corporate IT budgets pivot aggressively toward generative AI, traditional mainframe cycles are facing a temporary squeeze—but the backbone of enterprise computing isn't dead yet.",
+    "metaDescription": "As enterprise IT budgets pivot toward generative AI, legacy mainframe cycles face a temporary squeeze. But the backbone of enterprise computing isn't dead.",
+    "keywords": [
+      "enterprise IT budgets",
+      "mainframe computing",
+      "generative ai spending",
+      "ibm hardware",
+      "corporate IT infrastructure"
+    ],
+    "category": "ai",
+    "categoryLabel": "AI",
+    "author": "Circuit Desk",
+    "date": "2026-07-23",
+    "readTime": "2 min read",
+    "featured": true,
+    "body": [
+      {
+        "type": "p",
+        "text": "For decades, the enterprise mainframe cycle has been as predictable as the seasons, driving reliable revenue for the giants of legacy tech. But the sudden, insatiable appetite for generative AI has disrupted this rhythm. Today, Chief Information Officers are facing a stark, zero-sum choice: fund expensive new GPU clusters or upgrade their core legacy silicon. Right now, AI is winning the tug-of-war for corporate cash."
+      },
+      {
+        "type": "p",
+        "text": "This budget diversion has triggered a sudden chill in traditional hardware sales. When enterprise giants report sluggish infrastructure numbers, it is not because the mainframe is obsolete. It is because tech buyers are temporarily hoarding capital to purchase Nvidia chips and cloud-based LLM subscriptions."
+      },
+      {
+        "type": "h2",
+        "text": "The Zero-Sum IT Budget"
+      },
+      {
+        "type": "p",
+        "text": "Enterprise IT budgets are not bottomless. Despite the hype around digital transformation, most corporate technology allocation increases by only single-digit percentages each year. When a breakthrough technology like generative AI demands immediate investment, that money has to be carved out of existing lines of business."
+      },
+      {
+        "type": "p",
+        "text": "Legacy infrastructure is the easiest target for a delay. A company can comfortably run its existing transactional databases on a three-year-old mainframe for an extra quarter or two without risking operational failure. By postponing these multi-million-dollar hardware refreshes, CIOs free up the immediate liquidity required to build AI playgrounds and secure cloud-GPU allocations. It is a tactical pause, not a permanent abandonment."
+      },
+      {
+        "type": "h2",
+        "text": "Mainframes Aren't Going Anywhere"
+      },
+      {
+        "type": "p",
+        "text": "Despite the dramatic shift in spending, rumors of the mainframe's demise remain highly exaggerated. These massive systems still process the overwhelming majority of the world's credit card transactions, flight bookings, and insurance claims. No modern LLM can match the transactional consistency, extreme security, and nine-nines uptime of a dedicated mainframe."
+      },
+      {
+        "type": "p",
+        "text": "Furthermore, the future of enterprise AI actually relies on the data stored within these legacy systems. Training a model on public web data is no longer enough for competitive enterprises; they need to ground their AI in proprietary transaction histories. The most efficient place to run these hybrid AI workloads is often directly on the mainframe itself, using built-in, on-chip AI accelerators."
+      },
+      {
+        "type": "h2",
+        "text": "A Cyclical Dip, Not a Structural Collapse"
+      },
+      {
+        "type": "p",
+        "text": "What we are witnessing is a classic cyclical transition point, exaggerated by the unprecedented gravity of the AI hype cycle. Mainframe sales have always behaved like a pendulum, swinging wildly based on when the latest chip architecture is released. When a major new platform cycle begins, the buyers will return."
+      },
+      {
+        "type": "p",
+        "text": "Once the initial gold rush phase of generative AI cools into practical, day-to-day deployment, enterprise IT budgets will likely rebalance. Companies will realize that a powerful AI model is useless without a stable, secure transactional core to feed it. Ultimately, the legacy mainframe and modern AI are not competitors—they are destined to become deeply interdependent partners."
+      }
+    ],
+    "sourceName": "TechCrunch",
+    "sourceLink": "https://techcrunch.com/2026/07/22/after-shocking-quarter-ibm-insists-that-ai-isnt-killing-the-mainframe/",
+    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNDgzfDB8MXxzZWFyY2h8MXx8ZGF0YSUyMGNlbnRlciUyMHNlcnZlciUyMHJhY2t8ZW58MHwwfHx8MTc4NDc4NTg2MHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageAlt": "A row of modern high-performance enterprise server racks in a dimly lit data center.",
+    "imageCredit": {
+      "name": "Taylor Vick",
+      "url": "https://unsplash.com/@tvick?utm_source=circuit&utm_medium=referral"
     }
   }
 ]
