@@ -32,6 +32,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 from datetime import datetime, timezone
 
 try:
@@ -197,15 +198,37 @@ def write_article(client, model, item, category_keywords, unsplash_key=None):
         f"Summary: {item['summary']}\n\n"
         f"Write an original Circuit article inspired by this topic."
     )
-    response = client.models.generate_content(
-        model=model,
-        contents=user_prompt,
-        config=types.GenerateContentConfig(
-            system_instruction=WRITER_SYSTEM_PROMPT,
-            response_mime_type="application/json",
-            max_output_tokens=2000,
-        ),
-    )
+
+    # Gemini's free tier can be briefly overloaded (503 UNAVAILABLE) during
+    # high-traffic periods. This is transient, not a real failure, so retry
+    # a few times with increasing delays before giving up on this item.
+    max_attempts = 4
+    response = None
+    for attempt in range(1, max_attempts + 1):
+        try:
+            response = client.models.generate_content(
+                model=model,
+                contents=user_prompt,
+                config=types.GenerateContentConfig(
+                    system_instruction=WRITER_SYSTEM_PROMPT,
+                    response_mime_type="application/json",
+                    max_output_tokens=2000,
+                ),
+            )
+            break
+        except Exception as e:
+            is_last = attempt == max_attempts
+            print(f"  ! Attempt {attempt}/{max_attempts} failed: {e}")
+            if is_last:
+                print("  ! Giving up on this item after repeated failures.")
+                return None
+            wait_seconds = 15 * attempt  # 15s, 30s, 45s
+            print(f"  Retrying in {wait_seconds}s...")
+            time.sleep(wait_seconds)
+
+    if response is None:
+        return None
+
     raw_text = (response.text or "").strip()
     raw_text = re.sub(r"^```json\s*|\s*```$", "", raw_text)
 
